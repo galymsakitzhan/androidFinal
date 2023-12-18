@@ -82,7 +82,7 @@ class HeadlinesFragment : Fragment() {
         })
 
         retryButton.setOnClickListener {
-            newsViewModel.getHeadlines("kz")
+            newsViewModel.getHeadlines("us")
         }
     }
 
@@ -132,7 +132,7 @@ class HeadlinesFragment : Fragment() {
                                  isAtLastItem && isNotAtBeginning &&
                                  isTotalMoreThanVisible && isScrolling
             if (shouldPaginate) {
-                newsViewModel.getHeadlines("kz")
+                newsViewModel.getHeadlines("us")
                 isScrolling = false
             }
 

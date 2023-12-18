@@ -1,4 +1,4 @@
-package com.finalProject.shopApp.ui.util
+package com.finalProject.shopApp.util
 
 class Constants {
     companion object{

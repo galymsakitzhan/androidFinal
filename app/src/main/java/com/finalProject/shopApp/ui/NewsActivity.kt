@@ -9,7 +9,6 @@ import com.finalProject.shopApp.R
 import com.finalProject.shopApp.databinding.ActivityNewsBinding
 import com.finalProject.shopApp.db.ArticleDatabase
 import com.finalProject.shopApp.repository.NewsRepository
-import com.finalProject.shopApp.ui.NewsViewModelProviderFactory
 
 class NewsActivity : AppCompatActivity() {
 

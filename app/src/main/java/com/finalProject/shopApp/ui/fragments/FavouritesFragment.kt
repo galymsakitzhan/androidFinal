@@ -15,7 +15,7 @@ import com.finalProject.shopApp.ui.NewsActivity
 import com.finalProject.shopApp.ui.NewsViewModel
 import com.google.android.material.snackbar.Snackbar
 
-class FavouritesFragment : Fragment() {
+class FavouritesFragment : Fragment(R.layout.fragment_favourites) {
     lateinit var newsViewModel: NewsViewModel
     lateinit var newsAdapter: NewsAdapter
     lateinit var binding: FragmentFavouritesBinding
@@ -32,12 +32,12 @@ class FavouritesFragment : Fragment() {
                 putSerializable("article", it)
             }
             findNavController().navigate(
-                R.id.action_favouritesFragment2_to_articleFragment2,
+                R.id.action_favouritesFragment_to_articleFragment,
                 bundle
             )
         }
 
-        val itemTouchHelperCallBack = object : ItemTouchHelper.SimpleCallback(
+        val itemTouchHelperCallback = object : ItemTouchHelper.SimpleCallback(
             ItemTouchHelper.UP or ItemTouchHelper.DOWN,
             ItemTouchHelper.LEFT or ItemTouchHelper.RIGHT) {
             override fun onMove(
@@ -60,7 +60,7 @@ class FavouritesFragment : Fragment() {
                 }
             }
         }
-        ItemTouchHelper(itemTouchHelperCallBack).apply {
+        ItemTouchHelper(itemTouchHelperCallback).apply {
             attachToRecyclerView(binding.recyclerFavourites)
         }
         newsViewModel.getFavouriteNews().observe(viewLifecycleOwner, Observer { articles ->

@@ -5,14 +5,13 @@ import android.content.Context
 import android.net.ConnectivityManager
 import android.net.NetworkCapabilities
 import android.os.Build
-import androidx.annotation.RequiresApi
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.finalProject.shopApp.models.Article
 import com.finalProject.shopApp.models.NewsResponse
 import com.finalProject.shopApp.repository.NewsRepository
-import com.finalProject.shopApp.ui.util.Resource
+import com.finalProject.shopApp.util.Resource
 import kotlinx.coroutines.launch
 import retrofit2.Response
 import java.io.IOException

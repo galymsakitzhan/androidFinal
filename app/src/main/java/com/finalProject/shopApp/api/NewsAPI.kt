@@ -1,7 +1,7 @@
 package com.finalProject.shopApp.api
 
 import com.finalProject.shopApp.models.NewsResponse
-import com.finalProject.shopApp.ui.util.Constants.Companion.API_KEY
+import com.finalProject.shopApp.util.Constants.Companion.API_KEY
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Query

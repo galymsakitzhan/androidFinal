@@ -1,4 +1,4 @@
-package com.finalProject.shopApp.ui.util
+package com.finalProject.shopApp.util
 
 sealed class Resource<T>(
     val data: T? = null,

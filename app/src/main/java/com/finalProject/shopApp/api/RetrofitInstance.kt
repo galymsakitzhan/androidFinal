@@ -1,6 +1,6 @@
 package com.finalProject.shopApp.api
 
-import com.finalProject.shopApp.ui.util.Constants.Companion.BASE_URL
+import com.finalProject.shopApp.util.Constants.Companion.BASE_URL
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit

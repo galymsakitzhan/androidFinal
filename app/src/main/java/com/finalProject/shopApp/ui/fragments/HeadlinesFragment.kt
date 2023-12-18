@@ -19,10 +19,10 @@ import com.finalProject.shopApp.adapters.NewsAdapter
 import com.finalProject.shopApp.databinding.FragmentHeadlinesBinding
 import com.finalProject.shopApp.ui.NewsActivity
 import com.finalProject.shopApp.ui.NewsViewModel
-import com.finalProject.shopApp.ui.util.Constants
-import com.finalProject.shopApp.ui.util.Resource
+import com.finalProject.shopApp.util.Constants
+import com.finalProject.shopApp.util.Resource
 
-class HeadlinesFragment : Fragment() {
+class HeadlinesFragment : Fragment(R.layout.fragment_headlines) {
     lateinit var  newsViewModel: NewsViewModel
     lateinit var newsAdapter: NewsAdapter
     lateinit var retryButton: Button
@@ -48,7 +48,7 @@ class HeadlinesFragment : Fragment() {
             val bundle = Bundle().apply {
                 putSerializable("article", it)
             }
-            findNavController().navigate(R.id.action_headlinesFragment2_to_articleFragment2, bundle)
+            findNavController().navigate(R.id.action_headlinesFragment_to_articleFragment, bundle)
         }
 
         newsViewModel.headlines.observe(viewLifecycleOwner, Observer {response ->

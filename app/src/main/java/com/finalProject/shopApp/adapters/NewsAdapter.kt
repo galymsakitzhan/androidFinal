@@ -1,12 +1,10 @@
 package com.finalProject.shopApp.adapters
 
-import android.accounts.AuthenticatorDescription
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.recyclerview.widget.AsyncDifferConfig
 import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
@@ -51,9 +49,9 @@ class NewsAdapter: RecyclerView.Adapter<NewsAdapter.ArticleViewHolder>(){
         val article = differ.currentList[position]
 
         articleImage = holder.itemView.findViewById(R.id.articleImage)
-        articleSource = holder.itemView.findViewById(R.id.articleSourse)
+        articleSource = holder.itemView.findViewById(R.id.articleSource)
         articleTitle = holder.itemView.findViewById(R.id.articleTitle)
-        articleDescription = holder.itemView.findViewById(R.id.artcileDescription)
+        articleDescription = holder.itemView.findViewById(R.id.articleDescription)
         articleDateTime = holder.itemView.findViewById(R.id.articleDateTime)
 
         holder.itemView.apply {

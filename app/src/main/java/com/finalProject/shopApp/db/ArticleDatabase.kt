@@ -14,7 +14,7 @@ import com.finalProject.shopApp.models.Article
 
 @TypeConverters(Converters::class)
 abstract class ArticleDatabase : RoomDatabase() {
-    abstract fun getArtcileDao(): ArticleDAO
+    abstract fun getArticleDao(): ArticleDAO
 
     companion object {
         @Volatile

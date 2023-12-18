@@ -12,7 +12,7 @@ android {
     defaultConfig {
         applicationId = "com.finalProject.shopApp"
         minSdk = 21
-        targetSdk = 34
+        targetSdk = 33
         versionCode = 1
         versionName = "1.0"
 
@@ -54,7 +54,7 @@ dependencies {
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.2")
 
     //room
-    implementation("androidx.room:room-runtime:2.6.1")
+    implementation("androidx.room:room-runtime:2.6.0")
     ksp ("androidx.room:room-compiler:2.6.0")
 
     // Kotlin extensions and coroutinus support for room
@@ -71,7 +71,7 @@ dependencies {
     // retrofit
     implementation("com.squareup.retrofit2:retrofit:2.9.0")
     implementation("com.squareup.retrofit2:converter-gson:2.9.0")
-    implementation("com.squareup.okhttp3:logging-interceptor:2.9.0")
+    implementation("com.squareup.okhttp3:logging-interceptor:4.5.0")
 
     //navigation components
     implementation("androidx.navigation:navigation-fragment-ktx:2.7.5")

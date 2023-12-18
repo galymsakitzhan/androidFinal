@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import androidx.fragment.app.Fragment
 import android.view.View
+import android.widget.AbsListView
 import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
@@ -19,16 +20,16 @@ import com.finalProject.shopApp.adapters.NewsAdapter
 import com.finalProject.shopApp.databinding.FragmentSearchBinding
 import com.finalProject.shopApp.ui.NewsActivity
 import com.finalProject.shopApp.ui.NewsViewModel
-import com.finalProject.shopApp.ui.util.Constants
-import com.finalProject.shopApp.ui.util.Constants.Companion.SEARCH_NEWS_TIME_DELAY
-import com.finalProject.shopApp.ui.util.Resource
+import com.finalProject.shopApp.util.Constants
+import com.finalProject.shopApp.util.Constants.Companion.SEARCH_NEWS_TIME_DELAY
+import com.finalProject.shopApp.util.Resource
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.MainScope
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
 
-class SearchFragment : Fragment() {
+class SearchFragment : Fragment(R.layout.fragment_search) {
     lateinit var newsViewModel: NewsViewModel
     lateinit var newsAdapter: NewsAdapter
     lateinit var retryButton: Button
@@ -55,7 +56,7 @@ class SearchFragment : Fragment() {
             val bundle = Bundle().apply {
                 putSerializable("article", it)
             }
-            findNavController().navigate(R.id.action_searchFragment2_to_articleFragment2, bundle)
+            findNavController().navigate(R.id.action_searchFragment_to_articleFragment, bundle)
         }
 
         var job: Job? = null
@@ -79,7 +80,7 @@ class SearchFragment : Fragment() {
                     response.data?.let {newsResponse ->
                         newsAdapter.differ.submitList(newsResponse.articles.toList())
                         val totalPages = newsResponse.totalResults / Constants.QUERY_PAGE_SIZE + 2
-                        isLastPage = newsViewModel.headlinesPage == totalPages
+                        isLastPage = newsViewModel.searchNewsPage == totalPages
                         if(isLastPage)
                             binding.recyclerSearch.setPadding(0,0,0,0,)
                     }
@@ -158,6 +159,13 @@ class SearchFragment : Fragment() {
                 isScrolling = false
             }
 
+        }
+
+        override fun onScrollStateChanged(recyclerView: RecyclerView, newState: Int) {
+            super.onScrollStateChanged(recyclerView, newState)
+
+            if (newState == AbsListView.OnScrollListener.SCROLL_STATE_TOUCH_SCROLL)
+                isScrolling = true
         }
     }
 
